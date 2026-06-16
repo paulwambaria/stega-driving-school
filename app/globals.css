@@ -1,26 +1,146 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand-red: #DC2626;
+  --color-brand-red-dark: #B91C1C;
+  --color-brand-red-light: #FEF2F2;
+  --color-brand-blue: #1D4DA1;
+  --color-brand-blue-dark: #163B7C;
+  --color-brand-blue-light: #EFF6FF;
+  --color-navy: #0F1C3F;
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #F8FAFC;
+  --color-text: #1E293B;
+  --color-text-muted: #64748B;
+  --color-border: #E2E8F0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FFFFFF;
+  color: #1E293B;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #F8FAFC; }
+::-webkit-scrollbar-thumb { background: #DC2626; border-radius: 3px; }
+
+/* Gradient text utilities */
+.text-gradient-red {
+  background: linear-gradient(135deg, #DC2626 0%, #F87171 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, #1D4DA1 0%, #60A5FA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Light grid pattern for white sections */
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* White grid pattern for dark sections */
+.bg-grid-white {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Hero carousel animations */
+@keyframes slideContentIn {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-content-enter {
+  animation: slideContentIn 0.75s ease-out 0.25s both;
+}
+
+/* Entrance animation for sections */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease-out both;
+}
+
+/* ── Preloader animations ─────────────────────── */
+@keyframes preloaderLogoIn {
+  from { opacity: 0; transform: scale(0.82) translateY(12px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0);     }
+}
+
+@keyframes preloaderTaglineIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+@keyframes preloaderProgress {
+  from { width: 0%;    }
+  to   { width: 100%;  }
+}
+
+@keyframes preloaderRingOuter {
+  0%   { transform: scale(0.9); opacity: 0.6; }
+  50%  { transform: scale(1.1); opacity: 0.2; }
+  100% { transform: scale(0.9); opacity: 0.6; }
+}
+
+@keyframes preloaderRingInner {
+  0%   { transform: scale(1.05); opacity: 0.3; }
+  50%  { transform: scale(0.95); opacity: 0.1; }
+  100% { transform: scale(1.05); opacity: 0.3; }
+}
+
+.preloader-logo-enter {
+  animation: preloaderLogoIn 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both;
+}
+
+.preloader-tagline-enter {
+  animation: preloaderTaglineIn 0.5s ease-out 0.6s both;
+}
+
+.preloader-progress {
+  animation: preloaderProgress 2.4s ease-in-out both;
+}
+
+.preloader-ring-outer {
+  animation: preloaderRingOuter 2s ease-in-out infinite;
+}
+
+.preloader-ring-inner {
+  animation: preloaderRingInner 2s ease-in-out 0.4s infinite;
 }
