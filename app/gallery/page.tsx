@@ -4,9 +4,22 @@ import type { Metadata } from "next";
 import { IconCamera, IconStar } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "Gallery | Stega Driving School",
+  title: "Gallery | Training Fleet & Classrooms | Stega Driving School Nairobi",
   description:
-    "See Stega Driving School in action — our training vehicles, instructors, and students learning to drive on Mfangano Street, Nairobi.",
+    "See Stega Driving School's NTSA-approved training fleet, branded cars, theory classroom, and students in action across Nairobi — CBD, Embakasi, Kayole, Savannah & Jevanjee branches.",
+  keywords: [
+    "Stega Driving School photos Nairobi",
+    "driving school training cars Nairobi",
+    "NTSA driving school fleet Kenya",
+  ],
+  alternates: { canonical: "https://stegadrivingschool.com/gallery" },
+  openGraph: {
+    title: "Gallery | Stega Driving School Training Fleet Nairobi",
+    description:
+      "Our iconic branded training cars are a familiar sight across Nairobi. 1,000+ licensed graduates.",
+    url: "https://stegadrivingschool.com/gallery",
+    images: [{ url: "/images/slider3.jpg", width: 1200, height: 630, alt: "Stega Driving School fleet" }],
+  },
 };
 
 const galleryItems = [

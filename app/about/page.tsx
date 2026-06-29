@@ -17,9 +17,22 @@ import {
 } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "About Us | Stega Driving School",
+  title: "About Us | NTSA-Approved Since 1995 | 1,000+ Graduates",
   description:
-    "Learn about Stega Driving School — Nairobi's trusted NTSA-approved driving institution on Mfangano Street with over 1,000 graduates.",
+    "Stega Driving School — Nairobi's most trusted driving school since 1995. NTSA-approved, 5 branches (CBD, Jevanjee, Embakasi, Savannah, Kayole), 96% pass rate, and over 1,000 licensed graduates. Learn our story.",
+  keywords: [
+    "about Stega Driving School",
+    "NTSA approved driving school history Nairobi",
+    "best driving school Nairobi 1995",
+    "trusted driving school Kenya",
+  ],
+  alternates: { canonical: "https://stegadrivingschool.com/about" },
+  openGraph: {
+    title: "About Stega Driving School | Nairobi's Most Trusted Since 1995",
+    description:
+      "30+ years of NTSA-approved driving education in Nairobi. 5 branches, 6 programs, 1,000+ graduates.",
+    url: "https://stegadrivingschool.com/about",
+  },
 };
 
 const values: { icon: ReactNode; title: string; desc: string; color: string }[] = [

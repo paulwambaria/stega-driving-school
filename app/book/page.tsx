@@ -342,20 +342,23 @@ export default function BookPage() {
               {/* Visit us */}
               <div className="bg-red-50 border border-red-100 rounded-2xl p-6">
                 <div className="text-[#DC2626] mb-3"><IconMapPin className="w-7 h-7" /></div>
-                <h4 className="text-slate-900 font-bold mb-2">Visit Us</h4>
-                <p className="text-slate-500 text-sm leading-relaxed">
-                  Mfangano Street, Nairobi
-                  <br />
-                  Walk-ins welcome during business hours.
-                </p>
-                <a
-                  href="https://maps.google.com/?q=Mfangano+Street+Nairobi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-[#DC2626] hover:text-[#B91C1C] text-sm font-semibold mt-3 transition-colors"
-                >
-                  Get Directions →
-                </a>
+                <h4 className="text-slate-900 font-bold mb-2">Visit Any Branch</h4>
+                <p className="text-slate-400 text-xs font-semibold uppercase tracking-wide mb-3">5 Locations Across Nairobi</p>
+                <ul className="space-y-2 mb-3">
+                  {[
+                    "CBD — Reli Co-op House, Mfangano St",
+                    "Jevanjee Gardens",
+                    "Embakasi",
+                    "Savannah",
+                    "Kayole",
+                  ].map((b) => (
+                    <li key={b} className="flex items-center gap-2 text-sm text-slate-600">
+                      <span className="w-1.5 h-1.5 bg-[#DC2626] rounded-full flex-shrink-0" />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-slate-400 text-xs">Walk-ins welcome · Mon–Sat 9AM–6PM</p>
               </div>
             </div>
           </div>

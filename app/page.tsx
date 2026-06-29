@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import HeroCarousel from "@/components/HeroCarousel";
@@ -15,6 +16,19 @@ import {
   IconPhone,
 } from "@/components/Icons";
 import type { ReactNode } from "react";
+
+export const metadata: Metadata = {
+  title: "Stega Driving School Nairobi | NTSA-Approved | 96% Pass Rate",
+  description:
+    "Learn to drive with Nairobi's most trusted NTSA-approved driving school since 1995. 5 branches: CBD, Jevanjee, Embakasi, Savannah & Kayole. Manual, automatic, motorcycle, truck & PSV courses. Call 0722 213 810.",
+  alternates: { canonical: "https://stegadrivingschool.com" },
+  openGraph: {
+    title: "Stega Driving School Nairobi | NTSA-Approved | 96% Pass Rate",
+    description:
+      "Nairobi's most trusted driving school since 1995. 5 branches, 6 programs, 96% pass rate. Register free today.",
+    url: "https://stegadrivingschool.com",
+  },
+};
 
 const trustItems = [
   "96% First-Attempt Pass Rate",
@@ -87,7 +101,7 @@ const steps: { num: string; title: string; desc: string; icon: ReactNode }[] = [
   {
     num: "01",
     title: "Register",
-    desc: "Fill in the form online or visit us on Mfangano Street. No payment required to register.",
+    desc: "Fill in the form online or walk into any of our 5 Nairobi branches. No payment required to register.",
     icon: <IconClipboard className="w-6 h-6 text-white" />,
   },
   {

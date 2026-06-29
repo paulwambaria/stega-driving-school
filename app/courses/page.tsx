@@ -4,9 +4,99 @@ import type { Metadata } from "next";
 import { IconClock, IconCheck, IconPhone } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "Driving Programs | Stega Driving School",
+  title: "Driving Courses Nairobi | Manual, Automatic, Motorcycle, PSV | NTSA-Approved",
   description:
-    "Explore all 6 NTSA-approved driving programs at Stega Driving School — manual, automatic, motorcycle, light truck, PSV, and combined courses.",
+    "6 NTSA-approved driving programs in Nairobi: Manual (B2), Automatic (B1), Combined (B1/B2), Motorcycle (A2), Light Truck (C1), PSV (D1/D2/B3). Stega Driving School — 5 branches, 96% pass rate. Call 0722 213 810.",
+  keywords: [
+    "manual driving course Nairobi",
+    "automatic driving course Nairobi",
+    "motorcycle training Nairobi Class A2",
+    "light truck driving course Kenya Class C1",
+    "PSV driving course Nairobi",
+    "matatu driver training Kenya",
+    "Class B2 driving licence Kenya",
+    "combined driving course Nairobi B1 B2",
+    "NTSA driving test preparation Nairobi",
+    "6 driving programs Nairobi",
+  ],
+  alternates: { canonical: "https://stegadrivingschool.com/courses" },
+  openGraph: {
+    title: "Driving Courses Nairobi | 6 NTSA-Approved Programs | Stega",
+    description:
+      "Manual, automatic, motorcycle, truck & PSV courses in Nairobi. NTSA-approved, 96% pass rate. 5 branches. Book free.",
+    url: "https://stegadrivingschool.com/courses",
+  },
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How long does it take to get a driving license in Kenya?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Most students complete training in 2–6 weeks, then book the NTSA test. The full process from enrolment to receiving your licence typically takes 4–8 weeks.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you provide vehicles for driving training in Nairobi?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. All training is done in our well-maintained, dual-control Stega branded cars. You do NOT need your own vehicle.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What are the driving course fees at Stega Driving School?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "For the most accurate and up-to-date course fees, call us on 0722 213 810 or visit any of our 5 Nairobi branches. Flexible payment options including M-Pesa installments are available.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I choose my driving lesson schedule in Nairobi?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Absolutely. We offer morning, afternoon, and weekend slots Monday to Saturday across all 5 Nairobi branches — we'll fit around your lifestyle.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What if I fail the NTSA driving test on the first attempt?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Our 96% first-attempt pass rate is very high, but if you don't pass, Stega provides additional coaching to address the gaps before your re-test — at no extra charge.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Are the driving instructors at Stega NTSA-certified?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes — every Stega instructor is fully certified and approved by the National Transport & Safety Authority (NTSA) of Kenya.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Which driving course is best for a complete beginner in Nairobi?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The Automatic Course (Class B1) is the most beginner-friendly — no gear changing, so you focus on road confidence. Many beginners also take the Combined Course to graduate with both manual and automatic licences.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does Stega Driving School offer PSV (matatu) training in Nairobi?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Our PSV / Professional Driving course covers Classes D1, D2, and B3 — designed for matatu drivers, bus operators, and tour vehicle professionals. It includes all NTSA PSV requirements.",
+      },
+    },
+  ],
 };
 
 const courses = [
@@ -138,6 +228,10 @@ const faqs = [
 export default function CoursesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="relative pt-36 pb-24 bg-[#0F1C3F] overflow-hidden">
         <div className="absolute inset-0 bg-grid-white" />
