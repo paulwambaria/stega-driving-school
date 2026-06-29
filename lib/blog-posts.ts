@@ -1213,8 +1213,8 @@ export const blogPosts: BlogPost[] = [
     readTime: 8,
     category: "Road Rules",
     categoryColor: "bg-red-100 text-red-700",
-    image: "/images/slider4.jpg",
-    imageAlt: "Nairobi road speed camera on Thika Superhighway",
+    image: "/images/speed-cameras-nairobi.jpg",
+    imageAlt: "NTSA speed camera being installed on Nairobi highway pole",
     keywords: [
       "speed cameras nairobi 2025",
       "nairobi speed camera locations",
